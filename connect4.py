@@ -25,7 +25,7 @@ def winningMove(board, piece):
     # Check horizontal locations for win
     for col in range(COL_COUNT-3):
         for row in range(ROW_COUNT):
-            if board[row][col] == piece and board[row][col+2] == piece and board[row][col+2] == piece and board[row][col+3] == piece:
+            if board[row][col] == piece and board[row][col+1] == piece and board[row][col+2] == piece and board[row][col+3] == piece:
                 return True
     
     # Check vertical locations for win
@@ -70,6 +70,10 @@ while not gameOver:
             row = getNextOpenRow(board, col)
             print(row)
             dropPiece(board, row, col, 2)
+
+            if winningMove(board, 2):
+                print("Player 2 menang.")
+                gameOver = True
     printBoard(board)
     turn += 1
     turn %= 2
