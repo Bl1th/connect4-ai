@@ -14,5 +14,5 @@ cd connect4-ai
 ```
 python connect4.py
 # atau
-`python connect4-pygame.py
+python connect4-pygame.py
 ```
