@@ -1,11 +1,18 @@
 # connect4-ai
-Cara pake: 
-1. Clone Repo
+## Cara install
+1. Install dependencies
+```cmd
+pip install numpy
+pip install pygame
+```
+2. Clone Repo
 ```
 git clone https://github.com/Blitherium/connect4-ai.git 
 cd connect4-ai
 ```
-2. Run file
-`python connect4.py`
-atau
-`python connect4-pygame.py`
+4. Run File
+```
+python connect4.py
+# atau
+`python connect4-pygame.py
+```
