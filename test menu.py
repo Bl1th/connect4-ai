@@ -1,7 +1,7 @@
 import pygame
 from pygame.locals import *
 import os
-from game import connect_ai
+import connect4_ai
 
 # Game Initialization
 pygame.init()
@@ -10,8 +10,8 @@ pygame.init()
 os.environ['SDL_VIDEO_CENTERED'] = '1'
 
 # Game Resolution
-screen_width=800
-screen_height=600
+screen_width=700
+screen_height=700
 screen=pygame.display.set_mode((screen_width, screen_height))
 
 # Text Renderer
@@ -59,7 +59,7 @@ def main_menu():
                     selected="quit"
                 if event.key==pygame.K_RETURN:
                     if selected=="start":
-                        connect_ai()
+                        connect4_ai.main()
                     if selected=="quit":
                         pygame.quit()
                         quit()
