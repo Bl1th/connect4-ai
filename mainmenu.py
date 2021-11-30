@@ -56,7 +56,8 @@ def main_menu():
                     selected="setting"
                 elif event.key==pygame.K_d:
                     selected="quit"
-                if event.key==pygame.K_RETURN:
+            if event.type==pygame.MOUSEBUTTONDOWN:
+                if event.button==1:
                     if selected=="start":
                         os.system('connect4_ai.py')
                     if selected=="quit":
