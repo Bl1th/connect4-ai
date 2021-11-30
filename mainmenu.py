@@ -3,8 +3,6 @@ from pygame.constants import QUIT
 from pygame.locals import *
 import os
 
-# Game Initialization
-pygame.init()
 
 # Center the Game Application
 os.environ['SDL_VIDEO_CENTERED'] = '1'
@@ -30,6 +28,12 @@ font = "Retro.ttf"
 clock = pygame.time.Clock()
 FPS=30
 
+# Setting option
+opsi_setting = "MINMAX ONLY"
+
+# opsi_setting = "WITH ALPHA BETA"
+
+
 # Text Renderer
 def text_format(message, textFont, textSize, textColor):
     newFont=pygame.font.Font(textFont, textSize)
@@ -37,7 +41,10 @@ def text_format(message, textFont, textSize, textColor):
 
     return newText
 
-def mainmenu():
+def mainmenu(opsi_setting):
+    # Game Initialization
+    pygame.init()
+
     class Option:
 
         hovered = False
@@ -66,18 +73,20 @@ def mainmenu():
             self.rect = self.rend.get_rect()
             self.rect.topleft = self.pos
 
+    setting_txt = "SETTING = " + opsi_setting
+
     menu_font = pygame.font.Font(font, 40)
     text_start=text_format("START", font, 75, white)
-    text_setting=text_format("SETTING", font, 75, white)
+    text_setting=text_format(setting_txt, font, 75, white)
     text_quit=text_format("QUIT", font, 75, white)
 
     start_rect=text_start.get_rect()
     setting_rect=text_setting.get_rect()
     quit_rect=text_quit.get_rect()
-    
+
     options = [
         Option("START", (screen_width/2 - (start_rect[2]/4), 300)), 
-        Option("SETTING", (screen_width/2 - (setting_rect[2]/4), 360)),
+        Option(setting_txt, (screen_width/2 - (setting_rect[2]/4), 360)),
         Option("QUIT", (screen_width/2 - (quit_rect[2]/4), 420))]
     
     pygame.display.update()
@@ -95,6 +104,12 @@ def mainmenu():
                         quit()
                     if event.type == pygame.MOUSEBUTTONDOWN and option.text == "START":
                         os.system('connect4_ai.py')
+                    if event.type == pygame.MOUSEBUTTONDOWN and option.text == setting_txt:
+                        if opsi_setting == "WITH ALPHA BETA":
+                            opsi_setting = "MINMAX ONLY"
+                        elif opsi_setting == "MINMAX ONLY":
+                            opsi_setting = "WITH ALPHA BETA"
+                        mainmenu(opsi_setting)
                     if event.type == pygame.MOUSEBUTTONDOWN and option.text == "QUIT":
                         pygame.quit()
                         quit()
@@ -111,6 +126,6 @@ def mainmenu():
     
         
 
-mainmenu()
+mainmenu(opsi_setting)
 pygame.quit()
 QUIT()
