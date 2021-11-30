@@ -24,14 +24,16 @@ def text_format(message, textFont, textSize, textColor):
 # Colors
 white=(255, 255, 255)
 black=(0, 0, 0)
-gray=(50, 50, 50)
+gray=(75, 75, 75)
 red=(255, 0, 0)
 green=(0, 255, 0)
 blue=(0, 0, 255)
 yellow=(255, 255, 0)
+darkblue=(28, 73, 102)
+skyblue=(69, 182, 254)
 
 # Game Fonts
-font = "Retro.ttf"
+font = "Montserrat-Bold.ttf"
 
 
 # Game Framerate
@@ -64,20 +66,20 @@ def main_menu():
                         quit()
 
         # Main Menu UI
-        screen.fill(blue)
-        title=text_format("Sourcecodester", font, 90, yellow)
+        screen.fill(black)
+        title=text_format("Connect-4", font, 90, skyblue)
         if selected=="start":
-            text_start=text_format("START", font, 75, white)
+            text_start=text_format("START", font, 75, yellow)
         else:
-            text_start = text_format("START", font, 75, black)
+            text_start = text_format("START", font, 75, gray)
         if selected=="setting":
-            text_setting=text_format("SETTING", font, 75, white)
+            text_setting=text_format("SETTINGS", font, 75, yellow)
         else:
-            text_setting = text_format("SETTING", font, 75, black)
+            text_setting = text_format("SETTINGS", font, 75, gray)
         if selected=="quit":
-            text_quit=text_format("QUIT", font, 75, white)
+            text_quit=text_format("QUIT", font, 75, yellow)
         else:
-            text_quit = text_format("QUIT", font, 75, black)
+            text_quit = text_format("QUIT", font, 75, gray)
 
         title_rect=title.get_rect()
         start_rect=text_start.get_rect()
