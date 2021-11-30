@@ -246,7 +246,7 @@ def main():
 						drop_piece(board, row, col, PLAYER_PIECE)
 
 						if winning_move(board, PLAYER_PIECE):
-							label = myfont.render("Player 1 wins!!", 1, RED)
+							label = myfont.render("Player wins!!", 1, RED)
 							screen.blit(label, (40,10))
 							game_over = True
 
