@@ -287,7 +287,7 @@ def main():
 				turn = turn % 2
 
 		if game_over:
-			pygame.time.wait(3000)
+			pygame.time.wait(5000)
 
 if __name__ == "__main__":
 	main()

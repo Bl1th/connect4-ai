@@ -10,9 +10,4 @@ pip install pygame
 git clone https://github.com/Blitherium/connect4-ai.git 
 cd connect4-ai
 ```
-3. Run File
-```
-python connect4.py
-# atau
-python connect4-pygame.py
-```
+3. Run File (I don't need to teach you how to do it :D)
