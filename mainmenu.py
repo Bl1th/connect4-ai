@@ -22,7 +22,7 @@ blue=(0, 0, 255)
 yellow=(255, 255, 0)
 
 # Game Fonts
-font = "Retro.ttf"
+font = "Montserrat-Bold.ttf"
 
 # Game Framerate
 clock = pygame.time.Clock()
@@ -103,7 +103,10 @@ def mainmenu(opsi_setting):
                         pygame.quit()
                         quit()
                     if event.type == pygame.MOUSEBUTTONDOWN and option.text == "START":
-                        os.system('connect4_ai.py')
+                        if opsi_setting == "WITH ALPHA BETA":
+                            os.system('connect4_ai.py')
+                        elif opsi_setting == "MINMAX ONLY":
+                            os.system('connect4_minmaxonly.py')
                     if event.type == pygame.MOUSEBUTTONDOWN and option.text == setting_txt:
                         if opsi_setting == "WITH ALPHA BETA":
                             opsi_setting = "MINMAX ONLY"
