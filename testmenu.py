@@ -1,7 +1,6 @@
 import pygame
 from pygame.locals import *
 import os
-import connect4_ai
 
 # Game Initialization
 pygame.init()
