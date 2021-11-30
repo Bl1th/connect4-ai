@@ -1,7 +1,6 @@
 import pygame
 from pygame.locals import *
 import os
-import connect4_ai
 
 # Game Initialization
 pygame.init()
@@ -59,9 +58,7 @@ def main_menu():
                     selected="quit"
                 if event.key==pygame.K_RETURN:
                     if selected=="start":
-                        connect4_ai.main()
-                        pygame.quit()
-                        quit()
+                        os.system('connect4_ai.py')
                     if selected=="quit":
                         pygame.quit()
                         quit()
