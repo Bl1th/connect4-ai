@@ -31,7 +31,7 @@ clock = pygame.time.Clock()
 FPS=30
 
 # Setting option
-opsi_setting = "MINMAX ONLY"
+opsi_setting = "MINIMAX"
 
 # Text Renderer
 def text_format(message, textFont, textSize, textColor):
@@ -101,15 +101,15 @@ def mainmenu(opsi_setting):
                         pygame.quit()
                         quit()
                     if event.type == pygame.MOUSEBUTTONDOWN and option.text == "START":
-                        if opsi_setting == "WITH ALPHA BETA":
-                            os.system('connect4_ai.py')
-                        elif opsi_setting == "MINMAX ONLY":
-                            os.system('connect4_minmaxonly.py')
+                        if opsi_setting == "ALPHA BETA":
+                            os.system('connect4_alphabeta.py')
+                        elif opsi_setting == "MINIMAX":
+                            os.system('connect4_minimax.py')
                     if event.type == pygame.MOUSEBUTTONDOWN and option.text == setting_txt:
-                        if opsi_setting == "WITH ALPHA BETA":
-                            opsi_setting = "MINMAX ONLY"
-                        elif opsi_setting == "MINMAX ONLY":
-                            opsi_setting = "WITH ALPHA BETA"
+                        if opsi_setting == "ALPHA BETA":
+                            opsi_setting = "MINIMAX"
+                        elif opsi_setting == "MINIMAX":
+                            opsi_setting = "ALPHA BETA"
                         mainmenu(opsi_setting)
                     if event.type == pygame.MOUSEBUTTONDOWN and option.text == "QUIT":
                         pygame.quit()
