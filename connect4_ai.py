@@ -276,7 +276,7 @@ def main():
 				drop_piece(board, row, col, AI_PIECE)
 
 				if winning_move(board, AI_PIECE):
-					label = myfont.render("Player 2 wins!!", 1, YELLOW)
+					label = myfont.render(" Agent Wins!!", 1, YELLOW)
 					screen.blit(label, (40,10))
 					game_over = True
 
