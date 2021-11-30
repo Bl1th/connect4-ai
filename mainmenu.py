@@ -33,29 +33,10 @@ FPS=30
 # Setting option
 opsi_setting = "MINMAX ONLY"
 
-# opsi_setting = "WITH ALPHA BETA"
-        # Main Menu UI
-        screen.fill(black)
-        title=text_format("Connect-4", font, 90, skyblue)
-        if selected=="start":
-            text_start=text_format("START", font, 75, yellow)
-        else:
-            text_start = text_format("START", font, 75, gray)
-        if selected=="setting":
-            text_setting=text_format("SETTINGS", font, 75, yellow)
-        else:
-            text_setting = text_format("SETTINGS", font, 75, gray)
-        if selected=="quit":
-            text_quit=text_format("QUIT", font, 75, yellow)
-        else:
-            text_quit = text_format("QUIT", font, 75, gray)
-
-
 # Text Renderer
 def text_format(message, textFont, textSize, textColor):
     newFont=pygame.font.Font(textFont, textSize)
     newText=newFont.render(message, 0, textColor)
-
     return newText
 
 def mainmenu(opsi_setting):
